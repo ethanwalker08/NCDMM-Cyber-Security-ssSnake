@@ -1,0 +1,19 @@
+[gd_scene format=2]
+
+[node name="FileDialog" type="FileDialog"]
+visible = true
+margin_left = 90.0
+margin_top = 135.0
+margin_right = 696.0
+margin_bottom = 553.0
+rect_min_size = Vector2( 400, 140 )
+size_flags_horizontal = 3
+size_flags_vertical = 3
+window_title = "Open a Directory"
+resizable = true
+dialog_text = "Select the folder where you would like to save the screenshot
+"
+dialog_hide_on_ok = true
+mode = 2
+access = 2
+show_hidden_files = true

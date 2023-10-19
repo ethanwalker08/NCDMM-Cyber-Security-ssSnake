@@ -1,0 +1,357 @@
+[gd_scene load_steps=14 format=2]
+
+[ext_resource path="res://Font/answerFont.tres" type="DynamicFont" id=1]
+[ext_resource path="res://Font/questionFont.tres" type="DynamicFont" id=2]
+[ext_resource path="res://Questions.gd" type="Script" id=3]
+[ext_resource path="res://Graphics/theme.tres" type="Theme" id=4]
+[ext_resource path="res://WrongAnswer.gd" type="Script" id=5]
+[ext_resource path="res://Font/PoetsenOne-Regular.ttf" type="DynamicFontData" id=6]
+[ext_resource path="res://Graphics/NCDMM horz full signature full color.png" type="Texture" id=7]
+[ext_resource path="res://Graphics/Icon_Download_White.svg.png" type="Texture" id=8]
+[ext_resource path="res://Font/endFont.tres" type="DynamicFont" id=9]
+
+[sub_resource type="DynamicFont" id=2]
+size = 24
+outline_size = 3
+use_filter = true
+font_data = ExtResource( 6 )
+
+[sub_resource type="DynamicFont" id=1]
+size = 50
+outline_size = 4
+use_filter = true
+font_data = ExtResource( 6 )
+
+[sub_resource type="DynamicFont" id=3]
+size = 34
+outline_size = 2
+outline_color = Color( 0, 0, 0, 1 )
+use_filter = true
+font_data = ExtResource( 6 )
+
+[sub_resource type="DynamicFont" id=4]
+size = 30
+outline_size = 2
+use_filter = true
+font_data = ExtResource( 6 )
+
+[node name="Control" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 3 )
+
+[node name="Retry" type="Popup" parent="."]
+margin_left = 14.0
+margin_right = 54.0
+margin_bottom = 40.0
+script = ExtResource( 5 )
+
+[node name="Label" type="Label" parent="Retry"]
+margin_top = 267.0
+margin_right = 801.0
+margin_bottom = 473.0
+theme = ExtResource( 4 )
+text = "That was incorrect"
+align = 1
+valign = 1
+autowrap = true
+
+[node name="Button" type="Button" parent="Retry"]
+margin_left = 303.0
+margin_top = 460.0
+margin_right = 458.0
+margin_bottom = 520.0
+theme = ExtResource( 4 )
+custom_colors/font_color_focus = Color( 0, 0, 0, 1 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_colors/font_color_hover = Color( 0, 0, 0, 1 )
+custom_colors/font_color_pressed = Color( 0, 0, 0, 1 )
+text = "Retry?"
+
+[node name="NCDMM Logo" type="Sprite" parent="Retry"]
+position = Vector2( 387, 220 )
+texture = ExtResource( 7 )
+
+[node name="Popup" type="Popup" parent="."]
+margin_right = 40.0
+margin_bottom = 40.0
+
+[node name="QuestionLabel" type="Label" parent="Popup"]
+margin_left = 53.0
+margin_top = 31.0
+margin_right = 744.0
+margin_bottom = 293.0
+theme = ExtResource( 4 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = ExtResource( 2 )
+text = "Question"
+align = 1
+valign = 1
+autowrap = true
+
+[node name="Answer1" type="Button" parent="Popup"]
+margin_left = 9.0
+margin_top = 320.0
+margin_right = 791.0
+margin_bottom = 417.0
+mouse_default_cursor_shape = 2
+theme = ExtResource( 4 )
+custom_fonts/font = ExtResource( 1 )
+action_mode = 0
+text = "Answer 1"
+align = 0
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Answer2" type="Button" parent="Popup"]
+margin_left = 9.0
+margin_top = 425.0
+margin_right = 791.0
+margin_bottom = 522.0
+mouse_default_cursor_shape = 2
+custom_fonts/font = ExtResource( 1 )
+action_mode = 0
+text = "Answer 2"
+align = 0
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Answer3" type="Button" parent="Popup"]
+margin_left = 9.0
+margin_top = 530.0
+margin_right = 791.0
+margin_bottom = 627.0
+mouse_default_cursor_shape = 2
+custom_fonts/font = ExtResource( 1 )
+action_mode = 0
+text = "Answer 3"
+clip_text = true
+align = 0
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Answer4" type="Button" parent="Popup"]
+margin_left = 9.0
+margin_top = 640.0
+margin_right = 791.0
+margin_bottom = 737.0
+mouse_default_cursor_shape = 2
+custom_fonts/font = ExtResource( 1 )
+action_mode = 0
+text = "Answer 4"
+align = 0
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="EndGame" type="Popup" parent="."]
+margin_right = 40.0
+margin_bottom = 40.0
+
+[node name="ThanksLabel" type="Label" parent="EndGame"]
+margin_left = -1.0
+margin_top = 309.0
+margin_right = 801.0
+margin_bottom = 428.0
+theme = ExtResource( 4 )
+text = "You have finished all questions [name goes here] !"
+align = 1
+autowrap = true
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="NCDMM Logo" type="Sprite" parent="EndGame"]
+position = Vector2( 387, 218 )
+texture = ExtResource( 7 )
+
+[node name="Score" type="Label" parent="EndGame"]
+margin_left = 130.0
+margin_top = 462.0
+margin_right = 256.0
+margin_bottom = 510.0
+theme = ExtResource( 4 )
+text = "Score: __ correct"
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="TakeScreenshot" type="Button" parent="EndGame"]
+margin_left = 158.0
+margin_top = 584.0
+margin_right = 669.0
+margin_bottom = 645.0
+rect_min_size = Vector2( 0, 50 )
+rect_clip_content = true
+hint_tooltip = "Save a screenshot of this screen"
+mouse_default_cursor_shape = 2
+custom_fonts/font = ExtResource( 9 )
+text = "Hit me to save screenshot"
+icon = ExtResource( 8 )
+
+[node name="SendLabel" type="Label" parent="EndGame"]
+visible = false
+margin_left = 465.0
+margin_top = 511.0
+margin_right = 817.0
+margin_bottom = 607.0
+custom_fonts/font = ExtResource( 9 )
+text = "Make sure to email the screenshot to ethan.walker@ncdmm.org"
+align = 1
+autowrap = true
+
+[node name="Saved" type="Label" parent="EndGame"]
+visible = false
+margin_left = 188.0
+margin_top = 662.0
+margin_right = 659.0
+margin_bottom = 758.0
+custom_fonts/font = ExtResource( 9 )
+text = "Your screenshot was saved you may close the window now. Thank you for playing!"
+align = 1
+autowrap = true
+
+[node name="ScoreSnake" type="Label" parent="EndGame"]
+margin_left = 130.0
+margin_top = 516.0
+margin_right = 400.0
+margin_bottom = 564.0
+theme = ExtResource( 4 )
+text = "Snake Length: "
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="StartScreen" type="Popup" parent="."]
+margin_right = 40.0
+margin_bottom = 40.0
+
+[node name="Controls" type="Label" parent="StartScreen"]
+margin_top = 383.0
+margin_right = 801.0
+margin_bottom = 585.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 2 )
+text = "This is the classic snake game with a Cyber Security Twist
+Each apple you eat will prompt you with a question you will have to answer to continue
+
+Controls:
+W or Up arrow: move up
+A or Left arrow: move left
+S or Down arrow: move down
+D or Right arrow: move right"
+align = 1
+autowrap = true
+
+[node name="Title" type="Label" parent="StartScreen"]
+margin_left = 19.0
+margin_top = 115.0
+margin_right = 806.0
+margin_bottom = 163.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = ExtResource( 2 )
+text = "NCDMM Cyber Sssecurity Awarenesnake"
+
+[node name="StartGame" type="Button" parent="StartScreen"]
+margin_left = 336.0
+margin_top = 686.0
+margin_right = 453.0
+margin_bottom = 740.0
+theme = ExtResource( 4 )
+custom_colors/font_color_focus = Color( 0, 0, 0, 1 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_colors/font_color_hover = Color( 0, 0, 0, 1 )
+custom_colors/font_color_pressed = Color( 0, 0, 0, 1 )
+text = "Begin"
+
+[node name="NCDMM Logo" type="Sprite" parent="StartScreen"]
+position = Vector2( 387, 274 )
+texture = ExtResource( 7 )
+
+[node name="Continue" type="Popup" parent="."]
+margin_right = 40.0
+margin_bottom = 40.0
+
+[node name="CorrectLabel" type="Label" parent="Continue"]
+margin_left = 223.0
+margin_top = 267.0
+margin_right = 581.0
+margin_bottom = 327.0
+theme = ExtResource( 4 )
+custom_fonts/font = SubResource( 1 )
+text = "That is correct!"
+
+[node name="ContinueButton" type="Button" parent="Continue"]
+margin_left = 18.0
+margin_top = 399.0
+margin_right = 785.0
+margin_bottom = 453.0
+theme = ExtResource( 4 )
+custom_colors/font_color_focus = Color( 0, 0, 0, 1 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_colors/font_color_hover = Color( 0, 0, 0, 1 )
+custom_colors/font_color_pressed = Color( 0, 0, 0, 1 )
+text = "Click me or press a direction to continue"
+
+[node name="NameInputPopup" type="Popup" parent="."]
+margin_right = 40.0
+margin_bottom = 40.0
+
+[node name="NCDMM Logo" type="Sprite" parent="NameInputPopup"]
+position = Vector2( 395, 175 )
+texture = ExtResource( 7 )
+
+[node name="EnterNameLabel" type="Label" parent="NameInputPopup"]
+margin_left = -14.0
+margin_top = 400.0
+margin_right = 824.0
+margin_bottom = 448.0
+theme = ExtResource( 4 )
+custom_fonts/font = ExtResource( 2 )
+text = "Please enter your first and last name"
+align = 1
+
+[node name="EnterNameEdit" type="LineEdit" parent="NameInputPopup"]
+margin_left = 214.0
+margin_top = 502.0
+margin_right = 593.0
+margin_bottom = 601.0
+custom_fonts/font = ExtResource( 9 )
+align = 1
+expand_to_text_length = true
+placeholder_text = "Your name here"
+caret_blink = true
+
+[node name="PlayGame" type="Button" parent="NameInputPopup"]
+margin_left = 94.0
+margin_top = 668.0
+margin_right = 736.0
+margin_bottom = 715.0
+theme = ExtResource( 4 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_fonts/font = SubResource( 3 )
+text = "Click to Submit Name and Begin Playing"
+
+[node name="SecondEnterNameLabel" type="Label" parent="NameInputPopup"]
+visible = false
+margin_left = -14.0
+margin_top = 613.0
+margin_right = 824.0
+margin_bottom = 661.0
+theme = ExtResource( 4 )
+custom_fonts/font = SubResource( 4 )
+text = "It is required that you enter your name"
+align = 1
+
+[connection signal="pressed" from="Retry/Button" to="Retry" method="_on_Button_pressed"]
+[connection signal="pressed" from="Popup/Answer1" to="." method="_on_Answer1_pressed"]
+[connection signal="pressed" from="Popup/Answer2" to="." method="_on_Answer2_pressed"]
+[connection signal="pressed" from="Popup/Answer3" to="." method="_on_Answer3_pressed"]
+[connection signal="pressed" from="Popup/Answer4" to="." method="_on_Answer4_pressed"]
+[connection signal="pressed" from="EndGame/TakeScreenshot" to="." method="_on_TakeScreenshot_pressed"]
+[connection signal="pressed" from="StartScreen/StartGame" to="." method="_on_StartGame_pressed"]
+[connection signal="pressed" from="Continue/ContinueButton" to="." method="_on_ContinueButton_pressed"]
+[connection signal="pressed" from="NameInputPopup/PlayGame" to="." method="_on_PlayGame_pressed"]

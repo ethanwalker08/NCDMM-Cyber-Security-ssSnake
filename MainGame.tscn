@@ -1,0 +1,106 @@
+[gd_scene load_steps=12 format=2]
+
+[ext_resource path="res://MainGame.gd" type="Script" id=1]
+[ext_resource path="res://Graphics/Snake_spritesheet.png" type="Texture" id=2]
+[ext_resource path="res://Graphics/apple.png" type="Texture" id=3]
+[ext_resource path="res://Graphics/grass.png" type="Texture" id=4]
+[ext_resource path="res://Score.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Sound/crunch.wav" type="AudioStream" id=6]
+[ext_resource path="res://Question.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Font/PoetsenOne-Regular.ttf" type="DynamicFontData" id=8]
+[ext_resource path="res://Graphics/for SSP.png" type="Texture" id=9]
+
+[sub_resource type="TileSet" id=1]
+0/name = "Snake_spritesheet.png 0"
+0/texture = ExtResource( 2 )
+0/tex_offset = Vector2( 0, 0 )
+0/modulate = Color( 1, 1, 1, 1 )
+0/region = Rect2( 0, 0, 320, 80 )
+0/tile_mode = 2
+0/autotile/icon_coordinate = Vector2( 2, 1 )
+0/autotile/tile_size = Vector2( 40, 40 )
+0/autotile/spacing = 0
+0/autotile/occluder_map = [  ]
+0/autotile/navpoly_map = [  ]
+0/autotile/priority_map = [  ]
+0/autotile/z_index_map = [  ]
+0/occluder_offset = Vector2( 0, 0 )
+0/navigation_offset = Vector2( 0, 0 )
+0/shape_offset = Vector2( 0, 0 )
+0/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+0/shape_one_way = false
+0/shape_one_way_margin = 0.0
+0/shapes = [  ]
+0/z_index = 0
+1/name = "apple.png 1"
+1/texture = ExtResource( 3 )
+1/tex_offset = Vector2( 0, 0 )
+1/modulate = Color( 1, 1, 1, 1 )
+1/region = Rect2( -8, -10, 58, 58 )
+1/tile_mode = 0
+1/occluder_offset = Vector2( 0, 0 )
+1/navigation_offset = Vector2( 0, 0 )
+1/shape_offset = Vector2( 0, 0 )
+1/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+1/shape_one_way = false
+1/shape_one_way_margin = 0.0
+1/shapes = [  ]
+1/z_index = 0
+
+[sub_resource type="DynamicFont" id=2]
+resource_local_to_scene = true
+use_mipmaps = true
+use_filter = true
+font_data = ExtResource( 8 )
+
+[node name="MainGame" type="Node"]
+script = ExtResource( 1 )
+
+[node name="TextureRect" type="TextureRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = ExtResource( 4 )
+expand = true
+stretch_mode = 2
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 119, 759 )
+texture = ExtResource( 9 )
+
+[node name="SnakeApple" type="TileMap" parent="."]
+tile_set = SubResource( 1 )
+cell_size = Vector2( 40, 40 )
+centered_textures = true
+format = 1
+
+[node name="SnakeTick" type="Timer" parent="."]
+wait_time = 0.2
+autostart = true
+
+[node name="Score" parent="." instance=ExtResource( 5 )]
+
+[node name="CrunchSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 6 )
+
+[node name="Question" parent="." instance=ExtResource( 7 )]
+visible = false
+margin_left = 5.0
+margin_top = 31.0
+margin_right = 5.0
+margin_bottom = 31.0
+
+[node name="Answer1" parent="Question/Popup" index="1"]
+custom_fonts/font = SubResource( 2 )
+
+[node name="Answer2" parent="Question/Popup" index="2"]
+custom_fonts/font = SubResource( 2 )
+
+[node name="Answer3" parent="Question/Popup" index="3"]
+custom_fonts/font = SubResource( 2 )
+
+[node name="Answer4" parent="Question/Popup" index="4"]
+custom_fonts/font = SubResource( 2 )
+
+[connection signal="timeout" from="SnakeTick" to="." method="_on_SnakeTick_timeout"]
+
+[editable path="Question"]
