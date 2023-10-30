@@ -105,7 +105,15 @@ func generateQuestions():
 	
 	var q40 = "What is ransomware?"
 	
+	var q41 = "True or false: It is considered safe to use the same complex password on all websites."
 	
+	var q42 = "What should you do after you learn about a data breach of a website? Choose the best answer."
+	
+	var q43 = "What are the characteristics of a strong password? Choose the best answer."
+	
+	var q44 = "If you want to share a password with someone, what's the best option?"
+	
+	var q45 = "Which website URL is legitimate?"
 	
 	var qArray = [q1]
 	qArray.append(q2)
@@ -147,6 +155,11 @@ func generateQuestions():
 	qArray.append(q38)
 	qArray.append(q39)
 	qArray.append(q40)
+	qArray.append(q41)
+	qArray.append(q42)
+	qArray.append(q43)
+	qArray.append(q44)
+	qArray.append(q45)
 	return qArray
 
 
@@ -455,8 +468,40 @@ func generateAnswers():
 		"A form of cryptocurrency", 0
 	]
 	
+	var q41Answers  =[
+		"True",
+		"False",
+		" ",
+		" ", 1
+	]
 	
+	var q42Answers =[
+		"Nothing",
+		"Change password only on that site",
+		"Change password on that site and any other site that may use that or a similar password",
+		"Don't visit that site again, if you dont visit it again nothing can happen", 2
+	]
 	
+	var q43Answers  =[
+		"Long",
+		"Long, complex, random, unique, with special characters and numbers",
+		"Easily memorized",
+		"Long and random with numbers like 4 and 3 replacing letters like A and E", 1
+	]
+	
+	var q44Answers  =[
+		"Email",
+		"Text Message",
+		"You should never share a password",
+		"A phone call", 2
+	]
+	
+	var q45Answers  =[
+		"https://www.payapl.com/us/webapps/mpp/requesting-payments",
+		"http://www.paypay.com.home/",
+		"https://www.pay.pal.com",
+		"https://www.paypal.com/us/home", 3
+	]
 	
 	var answersArray = [q1Answers]
 	answersArray.append(q2Answers)
@@ -498,6 +543,10 @@ func generateAnswers():
 	answersArray.append(q38Answers)
 	answersArray.append(q39Answers)
 	answersArray.append(q40Answers)
+	answersArray.append(q41Answers)
+	answersArray.append(q42Answers)
+	answersArray.append(q43Answers)
+	answersArray.append(q44Answers)
 	return answersArray
 
 
