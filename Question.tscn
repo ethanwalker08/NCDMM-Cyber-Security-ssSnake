@@ -1,0 +1,492 @@
+[gd_scene load_steps=22 format=2]
+
+[ext_resource path="res://Font/answerFont.tres" type="DynamicFont" id=1]
+[ext_resource path="res://Font/buttonFontBig.tres" type="DynamicFont" id=2]
+[ext_resource path="res://Questions.gd" type="Script" id=3]
+[ext_resource path="res://Font/buttonStylePress.tres" type="StyleBox" id=4]
+[ext_resource path="res://WrongAnswer.gd" type="Script" id=5]
+[ext_resource path="res://Font/buttonSyleHover.tres" type="StyleBox" id=6]
+[ext_resource path="res://Graphics/NCDMM horz full signature full color.png" type="Texture" id=7]
+[ext_resource path="res://Graphics/Icon_Download_White.svg.png" type="Texture" id=8]
+[ext_resource path="res://Font/endFont.tres" type="DynamicFont" id=9]
+[ext_resource path="res://Font/RobotoTheme1.tres" type="Theme" id=10]
+[ext_resource path="res://Font/buttonStyle.tres" type="StyleBox" id=11]
+[ext_resource path="res://Font/buttonFont.tres" type="DynamicFont" id=12]
+[ext_resource path="res://Graphics/for SSP.png" type="Texture" id=13]
+[ext_resource path="res://Font/Roboto-Bold.ttf" type="DynamicFontData" id=14]
+
+[sub_resource type="DynamicFontData" id=1]
+font_path = "res://Font/Roboto-Bold.ttf"
+
+[sub_resource type="DynamicFont" id=5]
+size = 48
+font_data = SubResource( 1 )
+
+[sub_resource type="Theme" id=6]
+resource_name = "Theme"
+default_font = SubResource( 5 )
+
+[sub_resource type="DynamicFont" id=7]
+size = 35
+use_mipmaps = true
+use_filter = true
+font_data = ExtResource( 14 )
+
+[sub_resource type="DynamicFont" id=8]
+size = 25
+use_mipmaps = true
+use_filter = true
+font_data = ExtResource( 14 )
+
+[sub_resource type="DynamicFont" id=10]
+size = 40
+use_filter = true
+font_data = ExtResource( 14 )
+
+[sub_resource type="DynamicFont" id=9]
+size = 30
+use_mipmaps = true
+use_filter = true
+font_data = ExtResource( 14 )
+
+[node name="Control" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+theme = SubResource( 6 )
+script = ExtResource( 3 )
+
+[node name="Retry" type="Popup" parent="."]
+margin_left = -1.0
+margin_right = 39.0
+margin_bottom = 40.0
+script = ExtResource( 5 )
+
+[node name="ColorRect" type="ColorRect" parent="Retry"]
+margin_left = 2.0
+margin_top = 1.0
+margin_right = 799.0
+margin_bottom = 801.0
+color = Color( 0.596078, 0.596078, 0.596078, 1 )
+
+[node name="Label" type="Label" parent="Retry"]
+margin_left = 170.0
+margin_top = 369.0
+margin_right = 627.0
+margin_bottom = 420.0
+theme = ExtResource( 10 )
+custom_fonts/font = ExtResource( 2 )
+text = "That is incorrect"
+align = 1
+valign = 1
+autowrap = true
+
+[node name="Button" type="Button" parent="Retry"]
+margin_left = 280.0
+margin_top = 468.0
+margin_right = 510.0
+margin_bottom = 528.0
+theme = ExtResource( 10 )
+custom_styles/hover = ExtResource( 6 )
+custom_styles/pressed = ExtResource( 4 )
+custom_styles/normal = ExtResource( 11 )
+text = "Retry?"
+
+[node name="NCDMM Logo" type="Sprite" parent="Retry"]
+position = Vector2( 387, 220 )
+texture = ExtResource( 7 )
+
+[node name="Popup" type="Popup" parent="."]
+margin_right = 40.0
+margin_bottom = 40.0
+
+[node name="ColorRect" type="ColorRect" parent="Popup"]
+margin_left = 2.0
+margin_top = 1.0
+margin_right = 799.0
+margin_bottom = 801.0
+color = Color( 0.596078, 0.596078, 0.596078, 1 )
+
+[node name="QuestionLabel" type="Label" parent="Popup"]
+margin_left = 53.0
+margin_top = 31.0
+margin_right = 744.0
+margin_bottom = 293.0
+theme = ExtResource( 10 )
+custom_fonts/font = SubResource( 7 )
+text = "Question"
+align = 1
+valign = 1
+autowrap = true
+
+[node name="Answer1" type="Button" parent="Popup"]
+margin_left = 9.0
+margin_top = 320.0
+margin_right = 791.0
+margin_bottom = 417.0
+mouse_default_cursor_shape = 2
+custom_fonts/font = ExtResource( 1 )
+custom_styles/hover = ExtResource( 6 )
+custom_styles/pressed = ExtResource( 4 )
+custom_styles/normal = ExtResource( 11 )
+action_mode = 0
+text = "Answer 1"
+align = 0
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Answer2" type="Button" parent="Popup"]
+margin_left = 9.0
+margin_top = 425.0
+margin_right = 791.0
+margin_bottom = 522.0
+mouse_default_cursor_shape = 2
+custom_fonts/font = ExtResource( 1 )
+custom_styles/hover = ExtResource( 6 )
+custom_styles/pressed = ExtResource( 4 )
+custom_styles/normal = ExtResource( 11 )
+action_mode = 0
+text = "Answer 2"
+align = 0
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Answer3" type="Button" parent="Popup"]
+margin_left = 9.0
+margin_top = 530.0
+margin_right = 791.0
+margin_bottom = 627.0
+mouse_default_cursor_shape = 2
+custom_fonts/font = ExtResource( 1 )
+custom_styles/hover = ExtResource( 6 )
+custom_styles/pressed = ExtResource( 4 )
+custom_styles/normal = ExtResource( 11 )
+action_mode = 0
+text = "Answer 3"
+align = 0
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Answer4" type="Button" parent="Popup"]
+margin_left = 9.0
+margin_top = 640.0
+margin_right = 791.0
+margin_bottom = 737.0
+mouse_default_cursor_shape = 2
+custom_fonts/font = ExtResource( 1 )
+custom_styles/hover = ExtResource( 6 )
+custom_styles/pressed = ExtResource( 4 )
+custom_styles/normal = ExtResource( 11 )
+action_mode = 0
+text = "Answer 4"
+align = 0
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="Popup"]
+position = Vector2( 80.25, 769.25 )
+scale = Vector2( 0.647679, 0.697531 )
+texture = ExtResource( 13 )
+region_rect = Rect2( 50, 50, 50, 50 )
+
+[node name="EndGame" type="Popup" parent="."]
+margin_right = 40.0
+margin_bottom = 40.0
+theme = ExtResource( 10 )
+
+[node name="ColorRect" type="ColorRect" parent="EndGame"]
+margin_left = 2.0
+margin_top = 1.0
+margin_right = 799.0
+margin_bottom = 801.0
+color = Color( 0.596078, 0.596078, 0.596078, 1 )
+
+[node name="FinishedLabel" type="Label" parent="EndGame"]
+margin_left = 144.0
+margin_top = 342.0
+margin_right = 665.0
+margin_bottom = 393.0
+text = "You have finished all questions, "
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="ThanksLabel" type="Label" parent="EndGame"]
+margin_left = 259.0
+margin_top = 401.0
+margin_right = 548.0
+margin_bottom = 459.0
+custom_colors/font_color = Color( 0.0392157, 0.4, 0.721569, 1 )
+text = "[name goes here]"
+align = 1
+autowrap = true
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Exclamation" type="Label" parent="EndGame"]
+margin_left = 558.0
+margin_top = 402.0
+margin_right = 570.0
+margin_bottom = 453.0
+text = "!"
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="NCDMM Logo" type="Sprite" parent="EndGame"]
+position = Vector2( 387, 218 )
+texture = ExtResource( 7 )
+
+[node name="Score" type="Label" parent="EndGame"]
+margin_left = 444.0
+margin_top = 462.0
+margin_right = 503.0
+margin_bottom = 513.0
+custom_colors/font_color = Color( 0.0392157, 0.4, 0.721569, 1 )
+text = " __"
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="ScoreLabel" type="Label" parent="EndGame"]
+margin_left = 321.0
+margin_top = 464.0
+margin_right = 444.0
+margin_bottom = 515.0
+text = "Score:"
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="TakeScreenshot" type="Button" parent="EndGame"]
+margin_left = 33.0
+margin_top = 591.0
+margin_right = 773.0
+margin_bottom = 652.0
+rect_min_size = Vector2( 0, 50 )
+rect_clip_content = true
+hint_tooltip = "Downloads a screenshot and opens email client"
+mouse_default_cursor_shape = 2
+custom_fonts/font = ExtResource( 12 )
+custom_styles/hover = ExtResource( 6 )
+custom_styles/pressed = ExtResource( 4 )
+custom_styles/normal = ExtResource( 11 )
+text = "Hit me to download and send screenshot"
+icon = ExtResource( 8 )
+
+[node name="SendLabel" type="Label" parent="EndGame"]
+visible = false
+margin_left = 292.0
+margin_top = 669.0
+margin_right = 644.0
+margin_bottom = 765.0
+custom_fonts/font = ExtResource( 9 )
+text = "Make sure to email the screenshot to ethan.walker@ncdmm.org"
+align = 1
+autowrap = true
+
+[node name="Saved" type="Label" parent="EndGame"]
+visible = false
+margin_left = 182.0
+margin_top = 662.0
+margin_right = 653.0
+margin_bottom = 758.0
+custom_fonts/font = ExtResource( 9 )
+text = "An email window should have opened! Please insert your downloaded screenshot and press send to email it to ethan.walker@ncdmm.org!"
+align = 1
+autowrap = true
+
+[node name="ScoreSnake" type="Label" parent="EndGame"]
+margin_left = 455.0
+margin_top = 519.0
+margin_right = 498.0
+margin_bottom = 570.0
+custom_colors/font_color = Color( 0.0392157, 0.4, 0.721569, 1 )
+text = "__"
+
+[node name="ScoreSnakeLabel" type="Label" parent="EndGame"]
+margin_left = 313.0
+margin_top = 519.0
+margin_right = 455.0
+margin_bottom = 570.0
+text = "Snake: "
+
+[node name="StartScreen" type="Popup" parent="."]
+margin_right = 40.0
+margin_bottom = 40.0
+theme = ExtResource( 10 )
+
+[node name="ColorRect" type="ColorRect" parent="StartScreen"]
+margin_left = 2.0
+margin_top = 1.0
+margin_right = 799.0
+margin_bottom = 801.0
+color = Color( 0.596078, 0.596078, 0.596078, 1 )
+
+[node name="Controls" type="Label" parent="StartScreen"]
+margin_left = 72.0
+margin_top = 383.0
+margin_right = 730.0
+margin_bottom = 590.0
+theme = ExtResource( 10 )
+custom_fonts/font = SubResource( 8 )
+text = "This is the classic snake game with a Cyber Security Twist!
+
+Eat the apples to grow your snake and answers cyber security questions!
+
+Avoid the edge of the screen and your snake's body to keep growing your snake!"
+align = 1
+autowrap = true
+
+[node name="Title" type="Label" parent="StartScreen"]
+margin_left = 104.0
+margin_top = 115.0
+margin_right = 697.0
+margin_bottom = 166.0
+custom_fonts/font = SubResource( 10 )
+text = "NCDMM Cyber Security ssSnake"
+
+[node name="StartGame" type="Button" parent="StartScreen"]
+margin_left = 297.0
+margin_top = 686.0
+margin_right = 518.0
+margin_bottom = 740.0
+custom_styles/hover = ExtResource( 6 )
+custom_styles/pressed = ExtResource( 4 )
+custom_styles/normal = ExtResource( 11 )
+text = "Begin"
+
+[node name="NCDMM Logo" type="Sprite" parent="StartScreen"]
+position = Vector2( 386, 274 )
+texture = ExtResource( 7 )
+
+[node name="Continue" type="Popup" parent="."]
+margin_right = 40.0
+margin_bottom = 40.0
+
+[node name="ColorRect" type="ColorRect" parent="Continue"]
+margin_left = 2.0
+margin_top = 1.0
+margin_right = 799.0
+margin_bottom = 801.0
+color = Color( 0.623529, 0.623529, 0.623529, 1 )
+
+[node name="NCDMM Logo" type="Sprite" parent="Continue"]
+position = Vector2( 387, 211 )
+texture = ExtResource( 7 )
+
+[node name="CorrectLabel" type="Label" parent="Continue"]
+margin_left = 248.0
+margin_top = 350.0
+margin_right = 552.0
+margin_bottom = 410.0
+theme = ExtResource( 10 )
+text = "That is correct!"
+align = 1
+valign = 1
+
+[node name="ContinueButton" type="Button" parent="Continue"]
+margin_left = 18.0
+margin_top = 459.0
+margin_right = 785.0
+margin_bottom = 513.0
+theme = ExtResource( 10 )
+custom_fonts/font = ExtResource( 12 )
+custom_styles/hover = ExtResource( 6 )
+custom_styles/pressed = ExtResource( 4 )
+custom_styles/normal = ExtResource( 11 )
+text = "Click me or press a direction to continue"
+
+[node name="NameInputPopup" type="Popup" parent="."]
+margin_right = 40.0
+margin_bottom = 40.0
+theme = ExtResource( 10 )
+
+[node name="ColorRect" type="ColorRect" parent="NameInputPopup"]
+margin_left = 2.0
+margin_top = 1.0
+margin_right = 799.0
+margin_bottom = 801.0
+color = Color( 0.596078, 0.596078, 0.596078, 1 )
+
+[node name="NCDMM Logo" type="Sprite" parent="NameInputPopup"]
+position = Vector2( 395, 175 )
+texture = ExtResource( 7 )
+
+[node name="Controls" type="Label" parent="NameInputPopup"]
+margin_left = 89.0
+margin_top = 406.0
+margin_right = 265.0
+margin_bottom = 565.0
+text = "
+Controls:
+"
+
+[node name="ControlsExplanation" type="Label" parent="NameInputPopup"]
+margin_left = 276.0
+margin_top = 432.0
+margin_right = 720.0
+margin_bottom = 554.0
+custom_fonts/font = ExtResource( 1 )
+text = "W or Up arrow: moves the snake up
+A or Left arrow: moves the snake to the left
+S or Down arrow: moves the snake down
+D or Right arrow: moves the snake to the right"
+
+[node name="EnterNameLabel" type="Label" parent="NameInputPopup"]
+margin_left = -14.0
+margin_top = 280.0
+margin_right = 824.0
+margin_bottom = 394.0
+custom_fonts/font = SubResource( 9 )
+text = "Before you begin,
+Please enter your first and last name
+and review the controls"
+align = 1
+
+[node name="EnterNameEdit" type="LineEdit" parent="NameInputPopup"]
+margin_left = 262.0
+margin_top = 595.0
+margin_right = 531.0
+margin_bottom = 653.0
+custom_fonts/font = ExtResource( 1 )
+custom_styles/normal = ExtResource( 11 )
+align = 1
+expand_to_text_length = true
+placeholder_text = "Your name here"
+caret_blink = true
+
+[node name="PlayGame" type="Button" parent="NameInputPopup"]
+margin_left = 84.0
+margin_top = 668.0
+margin_right = 726.0
+margin_bottom = 715.0
+custom_fonts/font = ExtResource( 1 )
+custom_styles/hover = ExtResource( 6 )
+custom_styles/pressed = ExtResource( 4 )
+custom_styles/normal = ExtResource( 11 )
+text = "Click to Submit Name and Begin Playing"
+
+[node name="SecondEnterNameLabel" type="Label" parent="NameInputPopup"]
+visible = false
+margin_left = 32.0
+margin_top = 729.0
+margin_right = 772.0
+margin_bottom = 780.0
+custom_fonts/font = ExtResource( 1 )
+text = "It is required that you enter your name"
+align = 1
+
+[connection signal="pressed" from="Retry/Button" to="Retry" method="_on_Button_pressed"]
+[connection signal="pressed" from="Popup/Answer1" to="." method="_on_Answer1_pressed"]
+[connection signal="pressed" from="Popup/Answer2" to="." method="_on_Answer2_pressed"]
+[connection signal="pressed" from="Popup/Answer3" to="." method="_on_Answer3_pressed"]
+[connection signal="pressed" from="Popup/Answer4" to="." method="_on_Answer4_pressed"]
+[connection signal="pressed" from="EndGame/TakeScreenshot" to="." method="_on_TakeScreenshot_pressed"]
+[connection signal="pressed" from="StartScreen/StartGame" to="." method="_on_StartGame_pressed"]
+[connection signal="pressed" from="Continue/ContinueButton" to="." method="_on_ContinueButton_pressed"]
+[connection signal="pressed" from="NameInputPopup/PlayGame" to="." method="_on_PlayGame_pressed"]
