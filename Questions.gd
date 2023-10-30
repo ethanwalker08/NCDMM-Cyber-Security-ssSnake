@@ -547,6 +547,7 @@ func generateAnswers():
 	answersArray.append(q42Answers)
 	answersArray.append(q43Answers)
 	answersArray.append(q44Answers)
+	answersArray.append(q45Answers)
 	return answersArray
 
 
