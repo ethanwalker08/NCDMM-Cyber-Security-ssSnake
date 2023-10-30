@@ -8,7 +8,7 @@ var numCorrect = 0.0
 var correctAnswer
 var questions
 var answers
-const numOfQuestionsInList = 45 # the number of questions to pull from aka however many questions are in the generator
+const numOfQuestionsInList = 46 # the number of questions to pull from aka however many questions are in the generator
 const numOfQuestionsTotal = 15.0 #has to be <= numOfQuestionsInList
 var gotCorrectAnswerFirstTime = true
 var numOfIncorrect = 0.0
@@ -115,6 +115,10 @@ func generateQuestions():
 	
 	var q45 = "Which website URL is legitimate?"
 	
+	var q46 = "Which of the following are types of tactics used in a cybersecurity attack?"
+	
+	
+	
 	var qArray = [q1]
 	qArray.append(q2)
 	qArray.append(q3)
@@ -160,6 +164,7 @@ func generateQuestions():
 	qArray.append(q43)
 	qArray.append(q44)
 	qArray.append(q45)
+	qArray.append(q46)
 	return qArray
 
 
@@ -503,6 +508,14 @@ func generateAnswers():
 		"https://www.paypal.com/us/home", 3
 	]
 	
+	var q46Answers  =[
+		"Phishing",
+		"Malware",
+		"Ransomware",
+		"All of the above", 3
+	]
+	
+	
 	var answersArray = [q1Answers]
 	answersArray.append(q2Answers)
 	answersArray.append(q3Answers)
@@ -548,6 +561,7 @@ func generateAnswers():
 	answersArray.append(q43Answers)
 	answersArray.append(q44Answers)
 	answersArray.append(q45Answers)
+	answersArray.append(q46Answers)
 	return answersArray
 
 
@@ -660,7 +674,7 @@ func checkIfAnswered():
 	while check == false:
 		questionNumber = randi() % numOfQuestionsInList - 2
 		if(checkAlmostFinishedGame()):
-				questionNumber = numOfQuestionsInList -1
+				questionNumber = numOfQuestionsInList
 				check = true
 		elif arrOfUsedQuestions.has(questionNumber):
 			questionNumber = randi() % numOfQuestionsInList - 2
