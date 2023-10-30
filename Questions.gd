@@ -8,7 +8,7 @@ var numCorrect = 0.0
 var correctAnswer
 var questions
 var answers
-const numOfQuestionsInList = 40 # the number of questions to pull from aka however many questions are in the generator
+const numOfQuestionsInList = 45 # the number of questions to pull from aka however many questions are in the generator
 const numOfQuestionsTotal = 15.0 #has to be <= numOfQuestionsInList
 var gotCorrectAnswerFirstTime = true
 var numOfIncorrect = 0.0
