@@ -262,32 +262,20 @@ __meta__ = {
 "_edit_group_": true
 }
 
-[node name="TakeScreenshot" type="Button" parent="EndGame"]
+[node name="SendScore" type="Button" parent="EndGame"]
 margin_left = 33.0
 margin_top = 591.0
 margin_right = 773.0
 margin_bottom = 652.0
 rect_min_size = Vector2( 0, 50 )
 rect_clip_content = true
-hint_tooltip = "Downloads a screenshot and opens email client"
 mouse_default_cursor_shape = 2
 custom_fonts/font = ExtResource( 12 )
 custom_styles/hover = ExtResource( 6 )
 custom_styles/pressed = ExtResource( 4 )
 custom_styles/normal = ExtResource( 11 )
-text = "Hit me to download and send screenshot"
+text = "Hit me to send your score to IT"
 icon = ExtResource( 8 )
-
-[node name="SendLabel" type="Label" parent="EndGame"]
-visible = false
-margin_left = 292.0
-margin_top = 669.0
-margin_right = 644.0
-margin_bottom = 765.0
-custom_fonts/font = ExtResource( 9 )
-text = "Make sure to email the screenshot to ethan.walker@ncdmm.org"
-align = 1
-autowrap = true
 
 [node name="Saved" type="Label" parent="EndGame"]
 visible = false
@@ -296,7 +284,7 @@ margin_top = 662.0
 margin_right = 653.0
 margin_bottom = 758.0
 custom_fonts/font = ExtResource( 9 )
-text = "An email window should have opened! Please insert your downloaded screenshot and press send to email it to ethan.walker@ncdmm.org!"
+text = "Your score has been sent to the IT Team! Thank you for playing!"
 align = 1
 autowrap = true
 
@@ -486,7 +474,7 @@ align = 1
 [connection signal="pressed" from="Popup/Answer2" to="." method="_on_Answer2_pressed"]
 [connection signal="pressed" from="Popup/Answer3" to="." method="_on_Answer3_pressed"]
 [connection signal="pressed" from="Popup/Answer4" to="." method="_on_Answer4_pressed"]
-[connection signal="pressed" from="EndGame/TakeScreenshot" to="." method="_on_TakeScreenshot_pressed"]
+[connection signal="pressed" from="EndGame/SendScore" to="." method="_on_SendScore_pressed"]
 [connection signal="pressed" from="StartScreen/StartGame" to="." method="_on_StartGame_pressed"]
 [connection signal="pressed" from="Continue/ContinueButton" to="." method="_on_ContinueButton_pressed"]
 [connection signal="pressed" from="NameInputPopup/PlayGame" to="." method="_on_PlayGame_pressed"]

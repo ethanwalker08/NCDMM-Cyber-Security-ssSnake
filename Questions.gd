@@ -1,5 +1,9 @@
 extends Control
 
+
+#email api stuff
+onready var http = $"../HTTPRequest"
+var scoreToSend = 0
 var sceneNumber = 0
 var nameOfParticipant
 var pathScreenshot
@@ -674,7 +678,7 @@ func checkIfAnswered():
 	while check == false:
 		questionNumber = randi() % numOfQuestionsInList - 2
 		if(checkAlmostFinishedGame()):
-				questionNumber = numOfQuestionsInList
+				questionNumber = numOfQuestionsInList -1
 				check = true
 		elif arrOfUsedQuestions.has(questionNumber):
 			questionNumber = randi() % numOfQuestionsInList - 2
@@ -698,6 +702,7 @@ func endGame():
 	numCorrect = numOfQuestionsTotal - numOfIncorrect
 	
 	var score = numCorrect / numOfQuestionsTotal * 100
+	scoreToSend = score
 	var snakeScore = $"../Score/ScoreText".text
 	
 	$"../SnakeTick".queue_free()
@@ -735,21 +740,16 @@ func _on_ContinueButton_pressed():
 	$Continue.hide()
 	sceneNumber = 2
 	$"../SnakeTick".start()
+
+
+
+func _on_SendScore_pressed():
+	var url = "https://hooks.zapier.com/hooks/catch/11080693/380papy/?Score="+str(scoreToSend)+"&Name="+nameOfParticipant
 	
-func saveScreenshot():
-	var vpt: Viewport = get_viewport()
-	var txt: Texture = vpt.get_texture()
-	var img: Image = txt.get_data()
-	img.flip_y()
-	var buf = img.save_png_to_buffer()
-	JavaScript.download_buffer(buf, "screenshot.png")
-	OS.shell_open("mailto:ethan.walker@ncdmm.org?subject=NCDMM Cyber Ninja Screenshot&body=Please insert your screenshot here")
+	make_post_request(url, false)
+	
 	$EndGame/Saved.show()
-	$EndGame/TakeScreenshot.hide()
-
-func _on_TakeScreenshot_pressed():
-	saveScreenshot()
-
+	$EndGame/SendScore.hide()
 
 func _on_PlayGame_pressed():
 	nameOfParticipant = $NameInputPopup/EnterNameEdit.text
@@ -760,3 +760,14 @@ func _on_PlayGame_pressed():
 		
 	else:
 		$NameInputPopup/SecondEnterNameLabel.show()
+
+
+
+func make_post_request(url, use_ssl):
+	# Add 'Content-Type' header:
+	var headers = ["Content-Type: application/json"]
+	http.request(url, headers, use_ssl, HTTPClient.METHOD_POST)
+
+func _on_HTTPRequest_request_completed(result, response_code, headers, body):
+	var json = JSON.parse_string(body.get_string_from_utf8())
+	print(json)

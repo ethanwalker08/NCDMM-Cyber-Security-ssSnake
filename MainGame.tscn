@@ -121,6 +121,9 @@ custom_fonts/font = SubResource( 3 )
 [node name="SecondEnterNameLabel" parent="Question/NameInputPopup" index="7"]
 custom_fonts/font = SubResource( 3 )
 
+[node name="HTTPRequest" type="HTTPRequest" parent="."]
+
 [connection signal="timeout" from="SnakeTick" to="." method="_on_SnakeTick_timeout"]
+[connection signal="request_completed" from="HTTPRequest" to="Question" method="_on_HTTPRequest_request_completed"]
 
 [editable path="Question"]
