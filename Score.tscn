@@ -16,8 +16,10 @@ self_modulate = Color( 1, 1, 1, 0.14902 )
 script = ExtResource( 2 )
 
 [node name="ScoreText" type="Label" parent="."]
-margin_right = 40.0
-margin_bottom = 14.0
+margin_left = 11.0
+margin_top = -12.0
+margin_right = 51.0
+margin_bottom = 15.0
 theme = ExtResource( 1 )
 custom_colors/font_color = Color( 0.219608, 0.290196, 0.0470588, 1 )
 custom_fonts/font = SubResource( 1 )

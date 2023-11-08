@@ -669,19 +669,18 @@ func generateNewQuestion():
 	$Popup/Answer2.text = answerArrayforQuestion[1]
 	$Popup/Answer3.text = answerArrayforQuestion[2]
 	$Popup/Answer4.text = answerArrayforQuestion[3]
-	print(correctAnswer)
 
 
 func checkIfAnswered():
 	var questionNumber
 	var check = false
 	while check == false:
-		questionNumber = randi() % numOfQuestionsInList - 2
+		questionNumber = randi() % numOfQuestionsInList - 1
 		if(checkAlmostFinishedGame()):
-				questionNumber = numOfQuestionsInList -1
+				questionNumber = numOfQuestionsInList
 				check = true
 		elif arrOfUsedQuestions.has(questionNumber):
-			questionNumber = randi() % numOfQuestionsInList - 2
+			questionNumber = randi() % numOfQuestionsInList - 1
 		else:
 			arrOfUsedQuestions.append(questionNumber)
 			check = true
