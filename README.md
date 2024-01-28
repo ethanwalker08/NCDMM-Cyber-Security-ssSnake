@@ -5,4 +5,6 @@
 This is the snake game used in the 2023 cyber security awareness 'Cyber Ninja' training at NCDMM.
 
 
-Visit the link at https://www.ncdmm.org/game/NCDMM%20Cyber%20Security%20ssSnake%20v1-0-0.html to play the game
+Visit the link at https://www.ncdmm.org/game/NCDMM%20Cyber%20Security%20ssSnake%20v1-0-0.html to play the game if you are an NCDMM employee
+
+If you are not an NCDMM Employee go to https://str8shot.itch.io/ncdmm-cyber-security-snake
