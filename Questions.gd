@@ -743,9 +743,9 @@ func _on_ContinueButton_pressed():
 
 
 func _on_SendScore_pressed():
-	var url = "https://hooks.zapier.com/hooks/catch/11080693/380papy/?Score="+str(scoreToSend)+"&Name="+nameOfParticipant
+	#var url = "https://hooks.zapier.com/hooks/catch/11080693/380papy/?Score="+str(scoreToSend)+"&Name="+nameOfParticipant
 	
-	make_post_request(url, false)
+	#make_post_request(url, false)
 	
 	$EndGame/Saved.show()
 	$EndGame/SendScore.hide()
